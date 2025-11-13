@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+int main() {
+    int students, subjects;
+
+    printf("Enter number of students: ");
+    scanf("%d", &students);
+
+    printf("Enter number of subjects: ");
+    scanf("%d", &subjects);
+
+    float scores[students][subjects];
+    float avg[students];
+    char grade[students];
+
+
+    for (int i = 0; i < students; i++) {
+        float sum = 0;
+        printf("\nStudent %d", i + 1);
+
+        for (int j = 0; j < subjects; j++) {
+            printf(" Score %d: ", j + 1);
+            scanf("%f", &scores[i][j]);
+            sum += scores[i][j];
+        }
+
+        avg[i] = sum / subjects;
+        if (avg[i] >= 90) {
+    grade[i] = 'A';
+} 
+else {
+    if (avg[i] >= 80) {
+        grade[i] = 'B';
+    }
+    else {
+        if (avg[i] >= 70) {
+            grade[i] = 'C';
+        }
+        else {
+            if (avg[i] >= 60) {
+                grade[i] = 'D';
+            }
+            else {
+                grade[i] = 'F';
+            }
+        }
+    }
+}
+	
+	}
+	printf("\nResults");
+    for (int i = 0; i < students; i++) {
+        printf("\nStudent %d:\n", i + 1);
+        printf(" Average: %.2f\n", avg[i]);
+        printf(" Grade: %c\n", grade[i]);
+    }
+
+}
+        
+    
+
+    
+   
